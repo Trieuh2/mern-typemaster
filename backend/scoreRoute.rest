@@ -1,0 +1,32 @@
+POST http://localhost:3000/score/
+Content-Type: application/json
+
+{
+    "userId": "6556b34452e506cfb0c65553",
+    "value": 120
+}
+###
+
+
+
+GET http://localhost:3000/score/
+###
+
+
+
+GET http://localhost:3000/score/6552e8fcbe07d8e84baaa714
+###
+
+
+PUT http://localhost:3000/score/6552e8fcbe07d8e84baaa714
+Content-Type: application/json
+
+{
+    "userId": "6556b34452e506cfb0c65553",
+    "value":120
+}
+###
+
+
+
+DELETE http://localhost:3000/score/6552e8fcbe07d8e84baaa714

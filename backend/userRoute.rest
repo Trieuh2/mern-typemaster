@@ -1,0 +1,36 @@
+POST http://localhost:3000/user/
+Content-Type: application/json
+
+{
+    "displayName": "testuser",
+    "email": "testuser@testuser.com",
+    "username": "testuserUN",
+    "password": 123
+}
+###
+
+
+
+GET http://localhost:3000/user/
+###
+
+
+
+GET http://localhost:3000/user/6556b34452e506cfb0c65553
+###
+
+
+PUT http://localhost:3000/user/6552ead77d8ae0cb4428d0f7
+Content-Type: application/json
+
+{
+  "displayName": "testuser",
+  "email": "testuser@testuser.com",
+  "username": "testuserUN",
+  "password": "123"
+}
+###
+
+
+
+DELETE http://localhost:3000/user/6552ead77d8ae0cb4428d0f7

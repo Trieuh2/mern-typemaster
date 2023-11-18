@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --bgColor: #333;
+  --textPrimary: #fff;
+  --textSecondary: #666;
+  --primaryColor: #fd4;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: var(--textSecondary);
+  font-size: 1rem;
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--primaryColor);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  font-size: 1.4rem;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bgColor);
+  color: var(--textPrimary);
+  font-family: "Roboto Mono", monospace;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+h1 {
+  align-items: center;
+  display: flex;
+  color: var(--primaryColor);
+}
+
+h1 svg {
+  margin-right: 10px;
+  width: 1em;
+  height: 1em;
+  fill: var(--primaryColor);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto Mono", monospace;
+}
+
+.info {
+  color: var(--primaryColor);
+}
+
+.wordbox {
+  text-align: left;
+  margin-top: 5px;
+  line-height: 35px;
+  min-height: 100px;
+  max-height: 10vh;
+  overflow: hidden;
+  position: relative;
+  color: var(--textSecondary);
+}
+
+.word {
+  display: inline-block;
+  margin: 0 5px;
+  position: relative;
+}
+
+.word.incorrect::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  bottom: 4px;
+  border-bottom: 2px solid #f55;
+  width: calc(100% + 2px);
+}
+
+.letter {
+  margin: 0.5px;
+}
+
+.letter.correct {
+  color: #fff;
+}
+
+.letter.incorrect {
+  color: #f55;
+}
+
+.letter.incorrect.extra {
+  color: #7e2a33;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0.6em 1.2em;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #ffffff7b;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.game {
+  padding: 1rem;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.game-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.leaderboard-container {
+  padding: 1.5rem;
+  color: var(--textSecondary);
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  justify-items: center;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--textSecondary);
+}
+
+th,
+td {
+  font-size: 0.6em;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid var(--textSecondary);
+}
+
+tr:hover {
+  background-color: rgb(45, 46, 39);
+}
+
+.social-media-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.cursor {
+  position: absolute;
+  background: var(--primaryColor);
+  width: 2px;
+  height: 1em;
+  transition: top 0.1s ease, left 0.1s ease;
+}
+
+.animate {
+  animation: blink 1s ease-in-out 0s infinite;
+}
