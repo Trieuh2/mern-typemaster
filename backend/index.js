@@ -7,10 +7,10 @@ import cors from "cors";
 
 const app = express();
 
-// Middleware for parsing request body
+// Middleware configuration
+// ========================
 app.use(express.json());
 
-// Middleware for handling CORS policy
 const options = {
   origin: [
     "http://localhost:3000",
@@ -22,17 +22,13 @@ const options = {
 };
 app.use(cors());
 
-app.get("/", (request, response) => {
-  console.log(request);
-  return response.status(200).send("Welcome To MERN");
-});
-
-// TODO: Create routes middleware
+// API Route Handlers
+// ==================
 app.use("/user", userRoute);
 app.use("/score", scoreRoute);
 
-// CONNECT TO DB
-// =============
+// DB Connection and Server Initialization
+// =======================================
 mongoose
   .connect(mongoDBURL)
   .then(() => {

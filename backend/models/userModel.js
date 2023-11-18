@@ -1,8 +1,4 @@
-// TODO: Introduce password changing and hashing
-// OPTIONAL: Add email validation regex
-
 import mongoose from "mongoose";
-// import bcrypt from "bcryptjs";
 
 const userSchema = mongoose.Schema(
   {
@@ -19,7 +15,6 @@ const userSchema = mongoose.Schema(
       unique: true,
       trim: true,
       lowercase: true
-      // Add email validation regex if needed
     },
     username: {
       type: String,
@@ -37,12 +32,5 @@ const userSchema = mongoose.Schema(
     timestamps: true
   }
 );
-
-// Optional: Pre-save hook to hash password
-// userSchema.pre("save", async function (next) {
-//   if (!this.isModified("password")) return next();
-//   this.password = await bcrypt.hash(this.password, 12);
-//   next();
-// });
 
 export const User = mongoose.model("User", userSchema);

@@ -1,4 +1,3 @@
-// TODO: add soft-delete for deletion
 import express from "express";
 import { User } from "../models/userModel.js";
 
